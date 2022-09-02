@@ -1,0 +1,31 @@
+h1
+{
+    background-color: blue;
+}
+.InputText textarea
+{
+    width:40vw;
+    height: 40vh;
+    margin: auto;
+}
+
+#textboxheading
+{
+    text-align: center;
+    display: block;
+    font-size: 45px;
+    background-color: rgb(225, 21, 55);
+    width:40%;
+    margin: 20px auto;
+}
+#button-box
+{
+    margin-top:15px;
+    text-align: center;
+    display: block;
+}
+.container
+{
+    width:60%;
+    margin:10px auto;
+}
