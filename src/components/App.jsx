@@ -1,38 +1,49 @@
 import React, { useState } from "react";
 import About from "./About";
-import Alert from "./Alert";
 import "./App.css";
 import Navbar from "./Navbar.jsx";
 import TextBox from "./TextBox.jsx";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 
 
-function App()
-{
-    const [presentmode,changeMode]=useState('light')
-    const [presentAlert,set_Alert]=useState(null)
+function App() {
+    const [presentmode, changeMode] = useState('light')
+    const [presentAlert, set_Alert] = useState(null)
 
-    const toggleMode=()=>
-    {
-        if(presentmode==='light')
-        {
-            
+    const toggleMode = () => {
+        if (presentmode === 'light') {
+
             changeMode('dark');
         }
-        else
-        {
-            
+        else {
+
             changeMode('light');
-            
+
         }
     }
-    console.log(presentmode+" ");
+    console.log(presentmode + " ");
     return (
-        <div>
-            <Navbar title='TextUtils' mode={presentmode} abouthead="About Us" togglemode={toggleMode}/>
-            <TextBox boxhead="Enter your text here"/>
-            {/*<About/>*/}
-        </div>
+        <Router>
+
+
+            <div>
+                <Navbar title='TextTils' mode={presentmode} abouthead="About Us" togglemode={toggleMode} />
+                <Switch>
+                    <Route exact path="/about" >
+                        <About />
+                    </Route>
+                    <Route exact path="/">
+                        <TextBox boxhead="Enter your text here" />
+                    </Route>
+                </Switch>
+            </div>
+        </Router>
     );
 }
 
